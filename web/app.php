@@ -16,6 +16,7 @@ else{
     header('Location: '.$linkpath.$defaultpage);
     die();
 }
+require_once('core/db.php');
 require_once('core/pages/'.$page[$pag]['file']);
 require_once('core/template.php');
 $ms_e=microtime(true);
