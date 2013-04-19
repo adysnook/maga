@@ -1,0 +1,32 @@
+.body{
+
+}
+
+.pagina{
+	background:#666;
+	width:1000px;
+	height:800px;
+	text-align:center;
+	overflow:hidden;
+}
+
+.meniu{
+	background:#933;
+	width:1000px;	
+}
+
+.login{
+	background:#063;
+	alignment-adjust:middle;
+	width:1000px;
+}
+
+.footer{
+	background:#933;
+	width:1000px;
+	
+}
+
+a:link{
+	text-decoration:none;
+}
