@@ -10,7 +10,10 @@ if(substr($req, 0, strlen($script))==$script){
     $req=substr($req, strlen($script));
     $linkpath=$script;
 }
-$req=substr($req, 0, -strlen($qs)-1);
+if(strlen($qs))
+	$req=substr($req, 0, -strlen($qs));
+if($req[strlen($req)-1]=='?')
+	$req=substr($req, 0, -1);
 require_once('core/pages.php');
 if(isset($page[$req]))
     $pag=$req;
