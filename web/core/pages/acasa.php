@@ -1,5 +1,0 @@
-<?php
-$continut='
-            Hello world!
-';
-?>
