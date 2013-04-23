@@ -1,6 +1,6 @@
 <?php
-$defaultpage='/acasa';
+$defaultpage='/produs';
 $page=array(
-    '/acasa'=>array('file'=>'acasa.php', 'title'=>'Acasa'),
+    '/produs'=>array('file'=>'produs.php', 'title'=>'Detalii Produs'),
 );
 ?>
