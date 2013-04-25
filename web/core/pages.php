@@ -1,4 +1,5 @@
 <?php
+
 $defaultpage='/';
 $page=array(
     '/'=>array('file'=>'acasa.php', 'title'=>'Acasa'),
@@ -6,5 +7,7 @@ $page=array(
 	'/contact'=>array('file'=>'contact.php','title'=>'Contact'),
 	'/produse'=>array('file'=>'listaprod.php','title'=>'Produse'),
 	'/cos'=>array('file'=>'cos.php','title'=>'Cosul de cumparaturi'),
-);
+	 '/produs'=>array('file'=>'produs.php', 'title'=>'Detalii Produs'),
+
+
 ?>
