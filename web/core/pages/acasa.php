@@ -1,5 +1,5 @@
 <?php
 $continut='
-            Hello world!
+        pagina de bun venit!
 ';
 ?>
