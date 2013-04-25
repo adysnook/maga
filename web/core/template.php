@@ -10,14 +10,14 @@
 <div class="body" align="center">
 
     <div class="login" align="right">
-    	<a href="login.html"> <input type="button" value="  Admin  " /> </a>
+    	<a href="login"> <input type="button" value="  Admin  " /> </a>
     </div>
 
     <div class="meniu">
-    	<a href="index.html"> <input type="button" value="  Acasa  " /> </a>
-    	<a href="listaprod.html"> <input type="button" value="  Produse  " /> </a>
-    	<a href="cos.html"> <input type="button" value="  Cosul meu  " /> </a>
-        <a href="contact.html"> <input type="button" value="  Contact  " /> </a>
+    	<a href="."> <input type="button" value="  Acasa  " /> </a>
+    	<a href="produse"> <input type="button" value="  Produse  " /> </a>
+    	<a href="cos"> <input type="button" value="  Cosul meu  " /> </a>
+        <a href="contact"> <input type="button" value="  Contact  " /> </a>
     </div>
 
 
