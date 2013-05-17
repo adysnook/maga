@@ -2,4 +2,3 @@
 $continut='
         pagina de bun venit!
 ';
-?>

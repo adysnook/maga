@@ -21,6 +21,8 @@ else{
     header('Location: '.$linkpath.$defaultpage);
     die();
 }
+session_start();
+if(!isset($_SESSION['admin'])) $_SESSION['admin']=false;
 require_once('core/db.php');
 require_once('core/pages/'.$page[$pag]['file']);
 require_once('core/template.php');

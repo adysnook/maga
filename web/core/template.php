@@ -10,7 +10,17 @@
 <div class="body" align="center">
 
     <div class="login" align="right">
+        <?php
+if($_SESSION['admin']){
+?>
+        <span style="color:white;">Logat ca <b><?=$_SESSION['admin']?><b></span><a href="logout"> <input type="button" value="  Logout  " /> </a>
+<?php
+}else{
+?>
     	<a href="login"> <input type="button" value="  Admin  " /> </a>
+<?php
+}
+?>
     </div>
 
     <div class="meniu">
