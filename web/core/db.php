@@ -28,6 +28,7 @@ if($init){
     foreach($install_query as $q)
         if($db->query($q)===false)
             die('Database creation error');
+	$db->query("INSERT INTO `settings` VALUES ('version', '".db_vers."');");
 }
 unset($install_query);
 unset($init);
