@@ -7,32 +7,35 @@
 
 </head>
 <body>
-<div class="body" align="center">
+<center>
+<div class="continut" align="center">
 
-    <div class="login" align="right">
-        <?php
-if($_SESSION['admin']){
-?>
-        <span style="color:white;">Logat ca <b><?=$_SESSION['admin']?><b></span><a href="logout"> <input type="button" value="  Logout  " /> </a>
-<?php
-}else{
-?>
-    	<a href="login"> <input type="button" value="  Admin  " /> </a>
-<?php
-}
-?>
-    </div>
+    <div class="header" >
+        <div class="logo" >
+            <img src="img/logo.png" width="250" />
+        </div>
 
-    <div class="meniu">
+        <div class="login" align="right">            
+            <?php	if($_SESSION['admin']){	?>
+                <span style="color:white;">Logat ca <b><?=$_SESSION['admin']?><b></span><a href="logout"> <input type="button" value="  Logout  " /> </a>
+            <?php	}else{   ?>
+                <a href="login"> <input type="button" value="  Admin  " /> </a>
+            <?php } ?>
+        </div>
+    
+        <br /><br />
     	<a href="."> <input type="button" value="  Acasa  " /> </a>
     	<a href="produse"> <input type="button" value="  Produse  " /> </a>
-    	<a href="cos"> <input type="button" value="  Cosul meu  " /> </a>
         <a href="contact"> <input type="button" value="  Contact  " /> </a>
+        <br />
+        <p align="right" style="padding-right:10px">
+        <a href="cos"> <img src="../img/shop_icon.png" width="30" /> </a>
+		</p>
     </div>
 
-
     <div class="pagina" >
-         <?=$continut?>
+    	<br />
+        <?=$continut?>
      </div>
     
     
@@ -42,5 +45,6 @@ if($_SESSION['admin']){
 
 
 </div>
+</center>
 </body>
 </html>
