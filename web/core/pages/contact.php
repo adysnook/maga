@@ -1,20 +1,26 @@
 <?php
-if(@$_POST['nume']){
-    $nume=@$_POST['nume'];
-    $prenume=@$_POST['prenume'];
-    $telefon=@$_POST['telefon'];
-    $email=@$_POST['email'];
-    $subiect=@$_POST['subiect'];
-    $mesaj=@$_POST['mesaj'];
-    $db->query("insert into `mesaje` values (null, '".mysql_real_escape_string($nume)
-        ."', '".mysql_real_escape_string($prenume)."', '".mysql_real_escape_string($email)
-        ."', '".mysql_real_escape_string($telefon)."', '".mysql_real_escape_string($subiect)
-        ."', '".mysql_real_escape_string($mesaj)."');");
-    $continut='Multumim pentru atentia acordata!';
+if($_SESSION['admin']){
+
+//list messages
+
 }else{
-    $continut='
-Contact us! <br>
-<br /><br />
+    if(@$_POST['nume']){
+        $nume=@$_POST['nume'];
+        $prenume=@$_POST['prenume'];
+        $telefon=@$_POST['telefon'];
+        $email=@$_POST['email'];
+        $subiect=@$_POST['subiect'];
+        $mesaj=@$_POST['mesaj'];
+        $db->query("insert into `mesaje` values (null, '".mysql_real_escape_string($nume)
+            ."', '".mysql_real_escape_string($prenume)."', '".mysql_real_escape_string($email)
+            ."', '".mysql_real_escape_string($telefon)."', '".mysql_real_escape_string($subiect)
+            ."', '".mysql_real_escape_string($mesaj)."');");
+        $continut='Multumim pentru atentia acordata!';
+    }else{
+        $continut='
+<br /><p>
+Pentru intrebari, sugestii sau reclamatii va rugam sa folositi formularul de contact de mai jos. 
+<br />
 <table align="center">
 <form action="contact" method="post">
 <tr>
@@ -47,4 +53,5 @@ Contact us! <br>
 * = obligatorii
 </form>
 ';
+    }
 }

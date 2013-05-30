@@ -65,3 +65,4 @@ ENGINE = InnoDB;";
 
 if(db_samp)
     require('sample_data.php');
+

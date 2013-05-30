@@ -22,9 +22,16 @@ if($user && $pass){
 $continut='<div style="color:white;">
         Log in as an administrator. <br>
         <form method="post">
-        username: <input type="text" name="user" value="" /> <br />
-        password: <input type="password" name="pass" value="" /> <br />
-        <input type="submit" value="  log in  " />
+		<table align="center"><tr>
+        	<td> username: </td> 
+			<td> <input type="text" name="user" value="" /> </td>
+		</tr> <tr>
+        	<td> password: </td>
+			<td> <input type="password" name="pass" value="" /> </td>
+		</tr><tr>
+			<td></td>
+        	<td align="left"> <input type="submit" value="  log in  " /> </td>
+		</tr> </table>
         </form></div>
 '.$mesaj.'
 ';

@@ -5,6 +5,12 @@
 <title><?=$page[$pag]['title']?> ~ maga</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 
+<script>
+function alertbox()
+{
+		alert("ATENTIE! Pagina urmatoare este dedicata administratorilor site-ului!");
+}
+</script>
 </head>
 <body>
 <center>
@@ -19,7 +25,7 @@
             <?php	if($_SESSION['admin']){	?>
                 <span style="color:white;">Logat ca <b><?=$_SESSION['admin']?><b></span><a href="logout"> <input type="button" value="  Logout  " /> </a>
             <?php	}else{   ?>
-                <a href="login"> <input type="button" value="  Admin  " /> </a>
+                <a href="login"> <input type="button" value="  Admin  " onclick="alertbox()"/> </a>
             <?php } ?>
         </div>
     
@@ -28,6 +34,7 @@
     	<a href="produse"> <input type="button" value="  Produse  " /> </a>
         <a href="contact"> <input type="button" value="  Contact  " /> </a>
         <br />
+<<<<<<< HEAD
         <a href="cos">
             <div style="float:right; padding-right:10px; border: 1px solid black;">
                 <img src="../img/shop_icon.png" width="30" border="0" />
@@ -42,8 +49,7 @@
     <div class="pagina" >
     	<br />
         <?=$continut?>
-     </div>
-    
+     </div>    
     
     <div class="footer">
     	All rights reserved to Adi, Bianca, Diana, Florin 

@@ -74,6 +74,7 @@ body{
 	height:800px;
 	text-align:center;
 	float:left;
+	color:#FFF;
 }
 
 .footer{
@@ -83,4 +84,15 @@ body{
 
 a:link{
 	text-decoration:none;
+	color:#FFF;
 }
+
+a:visited{
+	text-decoration:none;
+	color:#FFF;
+}
+
+p{
+	color:#FFF;
+}
+

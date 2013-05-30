@@ -11,4 +11,6 @@ $page=array(
     '/produs'=>array('file'=>'produs.php', 'title'=>'Detalii Produs'),
     '/cos_adauga_produs'=>array('file'=>'cos_adauga_produs.php', 'title'=>'Adaugare produs in cos...'),
     '/cos_scade_produs'=>array('file'=>'cos_scade_produs.php', 'title'=>'Scadere produs din cos...'),
+    '/edit'=>array('file'=>'edit.php','title'=>'Edit Produs'),
+    '/add'=>array('file'=>'add.php','title'=>'Adaug Produs'),
 );
