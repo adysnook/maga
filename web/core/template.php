@@ -34,7 +34,6 @@ function alertbox()
     	<a href="produse"> <input type="button" value="  Produse  " /> </a>
         <a href="contact"> <input type="button" value="  Contact  " /> </a>
         <br />
-<<<<<<< HEAD
         <a href="cos">
             <div style="float:right; padding-right:10px; border: 1px solid black;">
                 <img src="../img/shop_icon.png" width="30" border="0" />
