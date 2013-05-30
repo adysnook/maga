@@ -8,4 +8,3 @@ for($i=1;$i<=$n;$i++){
     $continut.=$rand['nume'].'<br>'.$rand['pret'].'<br><img src="img/produse/'.$rand['pid'].'" style="width:100px; height:100px;">';
 	$continut.='</a></div>';
 	}
-?>

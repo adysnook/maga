@@ -52,20 +52,16 @@ $install_query[]="CREATE  TABLE IF NOT EXISTS `settings` (
   `varvalue` VARCHAR(255) NOT NULL ,
   PRIMARY KEY (`varname`) )
 ENGINE = InnoDB;";
-$install_query[]="INSERT INTO `produse` (`pid`, `nume`, `pret`, `detalii`, `preview`) VALUES
-(1, 'rochie', 500, '-bumbac\r\n-alba,roz', 'rochie'),
-(2, 'Pantaloni', 200, '-bumbac\r\n-negru', 'pantaloni'),
-(3, 'Tricou ', 100, '-bumbac\r\n-culori la comananda', 'Tricou femei'),
-(4, 'Maieu', 90, '-elastic\r\n-albastru,rosu', 'maieu'),
-(5, 'Inel', 60, '-argint', 'Inel argint'),
-(6, 'ceas femei', 120, '-curea de piele(alb,rosu,negru)\r\n-plastic', 'CEAS'),
-(7, 'ceas barbatesc', 100, '-curea piele(alb,negru,maro)\r\n-metal', 'CEAS');";
+$install_query[]="CREATE  TABLE IF NOT EXISTS `mesaje` (
+  `mid` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `nume` VARCHAR(64) NOT NULL ,
+  `prenume` VARCHAR(64) NULL ,
+  `email` VARCHAR(255) NULL ,
+  `telefon` VARCHAR(15) NULL ,
+  `subiect` VARCHAR(255) NULL ,
+  `mesaj` TEXT NULL ,
+  PRIMARY KEY (`mid`) )
+ENGINE = InnoDB;";
 
-//administratorii
-$install_query[]="INSERT INTO `administratori` (`aid`, `username`, `password`) VALUES
-(1, 'bianca', 'bianca'),
-(2, 'adrian', 'adrian'),
-(3, 'diana', 'diana'),
-(4, 'florin', 'florin');";
-
-?>
+if(db_samp)
+    require('sample_data.php');

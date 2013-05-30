@@ -86,18 +86,45 @@ CREATE  TABLE IF NOT EXISTS `maga`.`settings` (
   PRIMARY KEY (`varname`) )
 ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `maga`.`sesiuni`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `maga`.`sesiuni` (
+  `sesid` BIGINT UNSIGNED NOT NULL ,
+  `regtime` TIMESTAMP NOT NULL DEFAULT NOW() ,
+  PRIMARY KEY (`sesid`) )
+ENGINE = MEMORY;
+
+
+-- -----------------------------------------------------
+-- Table `maga`.`produse_cos`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `maga`.`produse_cos` (
+  `pid` INT UNSIGNED NOT NULL ,
+  `sesid` BIGINT UNSIGNED NOT NULL ,
+  `cantitate` INT UNSIGNED NOT NULL ,
+  PRIMARY KEY (`pid`, `sesid`) )
+ENGINE = MEMORY;
+
+
+-- -----------------------------------------------------
+-- Table `maga`.`mesaje`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `maga`.`mesaje` (
+  `mid` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `nume` VARCHAR(64) NOT NULL ,
+  `prenume` VARCHAR(64) NULL ,
+  `email` VARCHAR(255) NULL ,
+  `telefon` VARCHAR(15) NULL ,
+  `subiect` VARCHAR(255) NULL ,
+  `mesaj` TEXT NULL ,
+  PRIMARY KEY (`mid`) )
+ENGINE = InnoDB;
+
 USE `maga` ;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
--- -----------------------------------------------------
--- Data for table `maga`.`settings`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `maga`;
-INSERT INTO `maga`.`settings` (`varname`, `varvalue`) VALUES ('version', '0.1');
-
-COMMIT;
