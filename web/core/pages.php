@@ -9,4 +9,6 @@ $page=array(
     '/produse'=>array('file'=>'lista.php','title'=>'Produse'),
     '/cos'=>array('file'=>'cos.php','title'=>'Cosul de cumparaturi'),
     '/produs'=>array('file'=>'produs.php', 'title'=>'Detalii Produs'),
+    '/cos_adauga_produs'=>array('file'=>'cos_adauga_produs.php', 'title'=>'Adaugare produs in cos...'),
+    '/cos_scade_produs'=>array('file'=>'cos_scade_produs.php', 'title'=>'Scadere produs din cos...'),
 );

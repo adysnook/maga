@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title><?=$page[$pag]['title']?> ~ maga</title>
@@ -28,9 +28,15 @@
     	<a href="produse"> <input type="button" value="  Produse  " /> </a>
         <a href="contact"> <input type="button" value="  Contact  " /> </a>
         <br />
-        <p align="right" style="padding-right:10px">
-        <a href="cos"> <img src="../img/shop_icon.png" width="30" /> </a>
-		</p>
+        <a href="cos">
+            <div style="float:right; padding-right:10px; border: 1px solid black;">
+                <img src="../img/shop_icon.png" width="30" border="0" />
+                <div style="float:left;text-align:left; color:white;">
+                    Produse: <?=$_SESSION['cos']['total']?> <br>
+                    Total: <?=$_SESSION['cos']['valoare']?> ron
+                </div>
+            </div>
+        </a>
     </div>
 
     <div class="pagina" >

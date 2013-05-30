@@ -24,6 +24,12 @@ else{
 require_once('core/db.php');
 require_once('core/session.php');
 if(!isset($_SESSION['admin'])) $_SESSION['admin']=false;
+if(!isset($_SESSION['cos'])){
+    $_SESSION['cos']=array();
+    $_SESSION['cos']['produse']=array();
+    $_SESSION['cos']['total']=0;
+    $_SESSION['cos']['valoare']=0;
+}
 require_once('core/pages/'.$page[$pag]['file']);
 require_once('core/template.php');
 $ms_e=microtime(true);
