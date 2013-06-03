@@ -59,8 +59,10 @@ $continut='
         <td style="float:left;"><input type="file" name="poza"></td>
     </tr>
 	<tr>
-        <tr><td colspan="2"><input type="submit" value="  Editeaza  "></td></tr>
+        <td colspan="2"><input type="submit" value="  Editeaza  "></td>
+    </tr>
 </table>
 </form>
+    <br><br><a href="delete?id='.$id.'"><input type="button" value="DELETE" style="font-size:48px; color:red;"></a>
 </center>
 ';

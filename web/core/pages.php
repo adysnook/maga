@@ -15,4 +15,5 @@ $page=array(
     '/add'=>array('file'=>'add.php','title'=>'Adaug Produs'),
     '/finalizare'=>array('file'=>'finalizare.php', 'title'=>'Finalizare comanda'),
     '/finalizare_validare'=>array('file'=>'finalizare_validare.php', 'title'=>'Ansamblu comanda'),
+    '/delete'=>array('file'=>'delete.php', 'title'=>'Stergere produs'),
 );
