@@ -13,4 +13,6 @@ $page=array(
     '/cos_scade_produs'=>array('file'=>'cos_scade_produs.php', 'title'=>'Scadere produs din cos...'),
     '/edit'=>array('file'=>'edit.php','title'=>'Edit Produs'),
     '/add'=>array('file'=>'add.php','title'=>'Adaug Produs'),
+    '/finalizare'=>array('file'=>'finalizare.php', 'title'=>'Finalizare comanda'),
+    '/finalizare_validare'=>array('file'=>'finalizare_validare.php', 'title'=>'Ansamblu comanda'),
 );

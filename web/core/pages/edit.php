@@ -1,29 +1,64 @@
 <?php
+$id=(int)(@$_GET['id']);
+$result=$db->query("select * from `produse` where `pid`=$id");
+if($result->num_rows!=1){
+    header('Location: produse');
+    die();
+}
+$rand=$result->fetch_array(MYSQL_ASSOC);
+$nume=@$_POST['nume'];
+$bucati_disponibile=@$_POST['bucati_disponibile'];
+$pret=@$_POST['pret'];
+$detalii=@$_POST['detalii'];
+$preview=@$_POST['preview'];
+if($nume && $bucati_disponibile && $pret && $detalii && $preview){
+    $db->query("update `produse` set `nume`='".mysql_real_escape_string($nume)."',
+                                     `bucati_disponibile`='".mysql_real_escape_string($bucati_disponibile)."',
+                                     `pret`='".mysql_real_escape_string($pret)."',
+                                     `detalii`='".mysql_real_escape_string($detalii)."',
+                                     `preview`='".mysql_real_escape_string($preview)."'
+                where `pid`=$id");
+    $result=$db->query("select * from `produse` where `pid`=$id");
+    $rand=$result->fetch_array(MYSQL_ASSOC);
+    $file=@$_FILES['poza'];
+    if($file && $file['tmp_name']){
+        require_once('core/image_process.php');
+        myscale($file['tmp_name'], 'img/produse', 'png', null, null);
+    }
+}
 $continut='
-<p>
-	EDITARE PRODUS
-</p>
-
-<table align="center">
+<form method="post" enctype="multipart/form-data">
+<center>
+<h1>Editare produs</h1>
+<img src="img/produse/'.$id.'" style="width:500px; height:500px; float:left;"> 
+<table>
 	<tr>
-		<td> Nume </td>
-		<td> <input type="text"> </td>
+		<td style="text-align:right; padding-right:25px;">Nume: </td>
+		<td style="float:left;"> <input type="text" name="nume" value="'.$rand['nume'].'" required> </td>
 	</tr>
 	<tr>
-		<td> Pret </td>
-		<td> <input type="number"> </td>
+		<td style="text-align:right; padding-right:25px;"> Bucati disponibile: </td>
+		<td style="float:left;"> <input type="text" name="bucati_disponibile" value="'.$rand['bucati_disponibile'].'" required> </td>
 	</tr>
 	<tr>
-		<td> Descriere </td>
-		<td> <input type="text"> </td>
+		<td style="text-align:right; padding-right:25px;"> Pret: </td>
+		<td style="float:left;"> <input type="text" name="pret" value="'.$rand['pret'].'" required> </td>
 	</tr>
 	<tr>
-		<td> Preview </td>
-		<td> <input type="text"> </td>
-	</tr>	
+		<td style="text-align:right; padding-right:25px;"> Detalii: </td>
+		<td style="float:left;"> <textarea name="detalii" cols="30" rows="8" required>'.$rand['detalii'].'</textarea> </td>
+	</tr>
+	<tr>
+		<td style="text-align:right; padding-right:25px;"> Preview: </td>
+		<td style="float:left;"> <textarea name="preview" cols="30" rows="5" required>'.$rand['preview'].'</textarea> </td>
+	</tr>
+    <tr>
+        <td style="text-align:right; padding-right:25px;">Schimba poza:</td>
+        <td style="float:left;"><input type="file" name="poza"></td>
+    </tr>
+	<tr>
+        <tr><td colspan="2"><input type="submit" value="  Editeaza  "></td></tr>
 </table>
-	<p> <input type="file" > </p>
-	<input type="button" value="  Editeaza  ">
-
-
+</form>
+</center>
 ';

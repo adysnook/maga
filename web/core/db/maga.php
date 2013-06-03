@@ -3,6 +3,7 @@ $install_query=array();
 $install_query[]="CREATE  TABLE IF NOT EXISTS `produse` (
   `pid` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
   `nume` VARCHAR(64) NOT NULL ,
+  `bucati_disponibile` INT UNSIGNED NOT NULL DEFAULT 0,
   `pret` DOUBLE UNSIGNED NOT NULL ,
   `detalii` TEXT NOT NULL ,
   `preview` TEXT NOT NULL ,
@@ -10,6 +11,8 @@ $install_query[]="CREATE  TABLE IF NOT EXISTS `produse` (
 ENGINE = InnoDB;";
 $install_query[]="CREATE  TABLE IF NOT EXISTS `comenzi` (
   `cid` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `nume` VARCHAR(64) NOT NULL,
+  `prenume` VARCHAR(64) NOT NULL,
   `adresa` TEXT NOT NULL ,
   `telefon` VARCHAR(16) NOT NULL ,
   `email` VARCHAR(255) NULL ,

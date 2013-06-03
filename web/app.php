@@ -30,6 +30,9 @@ if(!isset($_SESSION['cos'])){
     $_SESSION['cos']['total']=0;
     $_SESSION['cos']['valoare']=0;
 }
+$cos_produse=$_SESSION['cos']['total'];
+$cos_total=$_SESSION['cos']['valoare'];
+$page_title=$page[$pag]['title'];
 require_once('core/pages/'.$page[$pag]['file']);
 require_once('core/template.php');
 $ms_e=microtime(true);

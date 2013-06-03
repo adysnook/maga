@@ -12,3 +12,5 @@ for($i=0; $i<count($_SESSION['cos']['produse']); $i++){
     $continut.='<br>';
 }
 $continut.='<br>Total: '.$_SESSION['cos']['valoare'].' ron';
+if($_SESSION['cos']['valoare'])
+    $continut.='<br><a href="finalizare"><input type="button" value="Finalizeaza comanda"></a>';

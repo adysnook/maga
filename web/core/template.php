@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?=$page[$pag]['title']?> ~ maga</title>
+<title><?=$page_title?> ~ Maga</title>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 <script>
@@ -35,20 +35,22 @@ function alertbox()
         <a href="contact"> <input type="button" value="  Contact  " /> </a>
         <br />
         <a href="cos">
-            <div style="float:right; padding-right:10px; border: 1px solid black;">
-                <img src="../img/shop_icon.png" width="30" border="0" />
+            <div style="float:right; padding-right:10px; border: 1px solid black; background-color:#773333;">
                 <div style="float:left;text-align:left; color:white;">
-                    Produse: <?=$_SESSION['cos']['total']?> <br>
-                    Total: <?=$_SESSION['cos']['valoare']?> ron
+                    Produse: <?=$cos_produse?> <br>
+                    Total: <?=$cos_total?> ron
                 </div>
+                <img src="../img/shop_icon.png" width="30" border="0" />
             </div>
         </a>
     </div>
 
-    <div class="pagina" >
-    	<br />
+    <div class="pagina">
+        <br>
+
         <?=$continut?>
-     </div>    
+
+    </div>
     
     <div class="footer">
     	All rights reserved to Adi, Bianca, Diana, Florin 
