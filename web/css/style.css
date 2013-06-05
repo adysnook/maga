@@ -71,7 +71,7 @@ body{
 .pagina{
 	background:url(../img/random.png);
 	width:1000px;
-	height:800px;
+	min-height:800px;
 	text-align:center;
 	float:left;
 	color:#FFF;
