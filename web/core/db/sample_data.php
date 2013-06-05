@@ -18,3 +18,13 @@ $install_query[]="INSERT INTO `utilizatori` (`uid`, `username`, `password`, `adm
 (6, 'operator', 'operator', FALSE, TRUE),
 (7, 'admin', 'admin', TRUE, FALSE),
 (8, 'root', 'root', TRUE, TRUE);";
+
+$install_query[]="INSERT INTO `mesaje` (`mid`, `nume`, `prenume`, `email`, `telefon`, `subiect`, `mesaj`) VALUES
+(1, 'florin', 'alexandru', 'asasffgg@bla.com', '', 'Salut', 'Acesta este un mesaj de tip test!'),
+(2, 'florin', 'alexandru', 'asasffgg@bla.com', '', 'Salut 2', 'Mesajut test nr 2');
+";
+
+$install_query[]="INSERT INTO `comenzi` (`cid`, `nume`, `prenume`, `adresa`, `telefon`, `email`, `preluata_de`, `status`) VALUES
+(1, 'florin', 'alexandru', 'strada Doamna Mata', '87699077', 'asasffgg@bla.com', 4, 2),
+(2, 'user', 'name', 'hahaha street', '89 89 089', 'sexi_balamuc@ihaa.com', NULL, 0);
+";
