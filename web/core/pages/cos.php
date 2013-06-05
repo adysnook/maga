@@ -1,6 +1,6 @@
 <?php
 $continut='
-    	Cosuletul meu de cumparaturi!!! <br />
+    Cos de cumparaturi<br />
 ';
 for($i=0; $i<count($_SESSION['cos']['produse']); $i++){
     $produs=&$_SESSION['cos']['produse'][$i];

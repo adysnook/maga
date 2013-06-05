@@ -6,13 +6,14 @@ $mesaj='';
 if($user && $pass){
     $muser=$db->real_escape_string($user);
     $mpass=$db->real_escape_string($pass);
-    if($result = $db->query("SELECT COUNT(*) FROM `administratori` WHERE `username`='$muser' AND `password`='$mpass';")){
-        if($result->num_rows==1 && $result->field_count==1)
-            $ok=((int)current($result->fetch_array(MYSQLI_NUM))===1);
-        $result->close();
-    }
-    if($ok){
-        $_SESSION['admin']=$user;
+    $result = $db->query("SELECT * FROM `utilizatori` WHERE `username`='$muser' AND `password`='$mpass';");
+    if($result->num_rows==1){
+        $rand=$result->fetch_array(MYSQLI_ASSOC);
+        $_SESSION['uid']=$rand['uid'];
+        $_SESSION['user']=$user;
+        $_SESSION['pass']=$pass;
+        $_SESSION['admin']=(bool)$rand['admin'];
+        $_SESSION['operator']=(bool)$rand['operator'];
         header('Location: '.$linkpath.$defaultpage);
         die();
     }else{

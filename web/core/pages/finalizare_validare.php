@@ -4,12 +4,12 @@ $prenume=@$_POST['prenume'];
 $adresa=@$_POST['adresa'];
 $telefon=@$_POST['telefon'];
 $email=@$_POST['email'];
-if($nume && $prenume && $adresa && $telefon){
+if($nume && $prenume && $adresa && $telefon && $_SESSION['cos']['total']){
     $db->query("insert into `comenzi` values (null, '".mysql_real_escape_string($nume)."',
                                                        '".mysql_real_escape_string($prenume)."',
                                                        '".mysql_real_escape_string($adresa)."',
                                                        '".mysql_real_escape_string($telefon)."',
-                                                       '".mysql_real_escape_string($email)."');");
+                                                       '".mysql_real_escape_string($email)."', null, 0);");
     $result = $db->query("select `cid` from `comenzi` where `nume`='".mysql_real_escape_string($nume)."' and
                                                            `prenume`='".mysql_real_escape_string($prenume)."' and
                                                            `adresa`='".mysql_real_escape_string($adresa)."' and
@@ -48,7 +48,7 @@ if($nume && $prenume && $adresa && $telefon){
         </table>
         </center>
     ';
-    session_destroy();
+    unset($_SESSION['cos']);
 }else{
     header('Location: cos');
     die();

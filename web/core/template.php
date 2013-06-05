@@ -21,12 +21,23 @@ function alertbox()
             <img src="img/logo.png" width="250" />
         </div>
 
-        <div class="login" align="right">            
-            <?php	if($_SESSION['admin']){	?>
-                <span style="color:white;">Logat ca <b><?=$_SESSION['admin']?><b></span><a href="logout"> <input type="button" value="  Logout  " /> </a>
-            <?php	}else{   ?>
-                <a href="login"> <input type="button" value="  Admin  " onclick="alertbox()"/> </a>
-            <?php } ?>
+        <div class="login" align="right">
+<?php
+if($_SESSION['user']){
+    if($_SESSION['operator']){
+?>
+            <a href="comenzi"> <input type="button" value="  Comenzi  " /> </a>
+<?php
+    }
+?>
+            <span style="color:white;">Logat ca <b><?=$_SESSION['user']?><b></span><a href="logout"> <input type="button" value="  Logout  " /> </a>
+<?php
+}else{
+?>
+            <a href="login"> <input type="button" value="  Admin  " onclick="alertbox()"/> </a>
+<?php
+}
+?>
         </div>
     
         <br /><br />

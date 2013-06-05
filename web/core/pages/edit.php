@@ -1,4 +1,8 @@
 <?php
+if(!$_SESSION['admin']){
+    header('Location: '.$linkpath.$defaultpage);
+    die();
+}
 $id=(int)(@$_GET['id']);
 $result=$db->query("select * from `produse` where `pid`=$id");
 if($result->num_rows!=1){
@@ -23,8 +27,8 @@ if($nume!==null && $bucati_disponibile!==null && $pret!==null && $detalii!==null
     $file=@$_FILES['poza'];
     if($file && $file['tmp_name']){
         require_once('core/image_process.php');
-        myscale($file['tmp_name'], 'img/produse/'.$id, IMG_PNG, null, null);
-        myscale($file['tmp_name'], 'img/produse/'.$id.'_thumb', IMG_PNG, 150, 150);
+        myscale($file['tmp_name'], 'img/produse/'.$id.'.png', IMG_PNG, 500, null);
+        myscale($file['tmp_name'], 'img/produse/'.$id.'_thumb.png', IMG_PNG, 150, 150);
         @unlink($file['tmp_name']);
     }
 }
@@ -63,6 +67,5 @@ $continut='
     </tr>
 </table>
 </form>
-    <br><br><a href="delete?id='.$id.'"><input type="button" value="DELETE" style="font-size:48px; color:red;"></a>
 </center>
 ';

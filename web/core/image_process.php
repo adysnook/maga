@@ -2,7 +2,7 @@
 function myscale($loadpath, $savepath, $toe, $maxw, $maxh){
     if(!(imagetypes() & $toe))
         return false;
-    $imgtype2ext=array(IMG_GIF=>'gif', IMG_JPG=>'jpg', IMG_PNG=>'png', IMG_WBMP=>'bmp');
+    $imgtype2ext=array(IMG_GIF=>'gif', IMG_JPG=>'jpeg', IMG_PNG=>'png', IMG_WBMP=>'wbmp');
     $toext=$imgtype2ext[$toe];
     if(!($im=@imagecreatefromstring(@file_get_contents($loadpath))))
         return false;
@@ -23,8 +23,24 @@ function myscale($loadpath, $savepath, $toe, $maxw, $maxh){
     }
     $im2=imagecreatetruecolor($tow, $toh);
     imagecopyresampled($im2, $im, 0, 0, 0, 0, $tow, $toh, $fromw, $fromh);
-    imagepng($im2, __DIR__.'/../'.$savepath.'.'.$toext);
+    $ok=false;
+    if($toe & IMG_GIF){
+        if(@imagegif($im2, $savepath))
+            $ok=true;
+    }
+    if($toe & IMG_JPG){
+        if(@imagejpeg($im2, $savepath))
+            $ok=true;
+    }
+    if($toe & IMG_PNG){
+        if(@imagepng($im2, $savepath))
+            $ok=true;
+    }
+    if($toe & IMG_WBMP){
+        if(@imagewbmp($im2, $savepath))
+            $ok=true;
+    }
     imagedestroy($im2);
     imagedestroy($im);
-    return true;
+    return $ok;
 }
