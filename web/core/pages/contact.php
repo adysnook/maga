@@ -1,6 +1,54 @@
 <?php
 if($_SESSION['admin']){
-
+   $var=$db->query('SELECT * FROM  `mesaje` ');
+   $continut='';
+   $n=$var->num_rows;
+   for($i=1;$i<=$n;$i++){
+            $rand=$var->fetch_array(MYSQL_ASSOC);
+            $continut.='
+                <div style="float:left;width:200px;"><div style="float:left;">
+                <br><p> Mesajele Primite:</br></p>
+				<table align="center">
+			    <tr>
+				   <td>
+				      '.$rand['mid'].'
+				   </td>
+				</tr>
+				<tr>
+				   <td>
+				     Nume: '.$rand['nume'].'
+				   </td>
+				</tr>
+				<tr>
+				   <td>
+				     Prenume: '.$rand['prenume'].'
+				   </td>
+				</tr>
+				<tr>
+				   <td>
+				     Email: '.$rand['email'].'
+				   </td>
+				</tr>
+				<tr>
+				   <td>
+				    Telefon:  '.$rand['telefon'].'
+				   </td>
+				</tr>
+				<tr> 
+				   <td>
+				     Subiect: '.$rand['subiect'].'
+				   </td>
+				</tr>
+				<tr>
+				   <td>
+				     Mesaj: '.$rand['mesaj'].'
+					</td>
+				</tr>
+			  </table>	 
+</div>			  
+		</div>		       
+';  
+   }
 //list messages
 
 }else{
