@@ -14,9 +14,11 @@ $page=array(
     '/add'=>array('file'=>'add.php','title'=>'Adaug Produs'),
     '/finalizare'=>array('file'=>'finalizare.php', 'title'=>'Finalizare comanda'),
     '/finalizare_validare'=>array('file'=>'finalizare_validare.php', 'title'=>'Ansamblu comanda'),
+
     '/comenzi'=>array('file'=>'comenzi.php', 'title'=>'Comenzi'),
     '/comanda'=>array('file'=>'comanda.php', 'title'=>'Comanda'),
     '/preia'=>array('file'=>'preia.php', 'title'=>'Asociere comanda...'),
+	'/copyright'=>array('file'=>'copyright.php','title'=>'Copyright'),
 );
 if(isset($page[$req]))
     $pag=$req;

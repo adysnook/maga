@@ -65,8 +65,11 @@ if($_SESSION['user']){
     
     <div class="footer">
     	All rights reserved to Adi, Bianca, Diana, Florin 
+		<br>
+		 <a href="copyright" ><font color="black"> See Copyright. ©  </a>
+		    </br>
+			
     </div>
-
 
 </div>
 </center>
