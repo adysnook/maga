@@ -54,8 +54,11 @@ function alertbox()
     
     <div class="footer">
     	All rights reserved to Adi, Bianca, Diana, Florin 
+		<br>
+		 <a href="http://www.cambridgeshire.gov.uk/copyright.html" target="_blank"><font color="black"> See Copyright. ©  </a>
+		    </br>
+			
     </div>
-
 
 </div>
 </center>
