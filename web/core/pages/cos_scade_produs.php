@@ -1,7 +1,7 @@
 <?php
 $id=@$_GET['id'];
-$var=$db->query('select * from produse where pid='.$id,MYSQL_ASSOC);
-if(!$var){
+$var=$db->query('select * from produse where pid='.$id);
+if(!$var || !$var->num_rows){
     header('Location: cos');
     die();
 }
