@@ -2,7 +2,7 @@
 $id=(int)@$_GET['id'];
 $var=$db->query('select * from produse where pid='.$id.';');
 $continut='';
-if($var===false){
+if($var===false || $var->num_rows==0){
     header('Location: '.$defaultpage);
     die();
 }
